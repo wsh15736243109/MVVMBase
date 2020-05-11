@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rv_topbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/pickerview_bg_topbar">
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_alignParentLeft="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/pickerview_cancel"
+        android:nextFocusRight="@id/btnSubmit"
+        android:background="@drawable/home_bg_selector"
+        android:textColor="@drawable/selector_pickerview_btn"
+        android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="@dimen/dp_0"
+        android:gravity="center"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/btnSubmit"
+        android:layout_toRightOf="@+id/btnCancel"
+        android:textColor="@color/pickerview_topbar_title"
+        android:textSize="@dimen/pickerview_topbar_title_textsize" />
+
+    <Button
+        android:id="@id/btnSubmit"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_alignParentRight="true"
+        android:focusable="true"
+        android:nextFocusLeft="@id/btnCancel"
+        android:background="@drawable/home_bg_selector"
+        android:gravity="center"
+        android:text="@string/pickerview_submit"
+        android:textColor="@drawable/selector_pickerview_btn"
+        android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+</LinearLayout>

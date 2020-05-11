@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/include_pickerview_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pickerview_topbar_height" />
+
+    <LinearLayout
+        android:id="@+id/timepicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+            android:id="@+id/year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnCancel"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="0.96" />
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="1" />
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@id/btnSubmit"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="1" />
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+            android:id="@+id/hour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusLeft="@id/btnCancel"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="1" />
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+            android:id="@+id/min"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:nextFocusRight="@id/btnSubmit"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="1" />
+
+        <com.androidcontrol.wheel.contrarywind.view.WheelView
+            android:id="@+id/second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:background="@drawable/home_bg_selector"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+
+</LinearLayout>

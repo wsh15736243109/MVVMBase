@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconEditText">
+        <attr name="right_icon" format="reference|integer"/>
+        <attr name="left_icon" format="reference|integer"/>
+        <attr name="top_icon" format="reference|integer"/>
+        <attr name="bottom_icon" format="reference|integer"/>
+    </declare-styleable>
+
+</resources>
