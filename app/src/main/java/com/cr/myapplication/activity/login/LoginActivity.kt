@@ -23,7 +23,9 @@ class LoginActivity : BaseMVVMActivity<ActivityLoginBinding, LoginVM>() {
     @JvmField
     @Autowired(name = "isSingle")
     var isSingle = false
-    val vm by viewModel<LoginVM>()
+    val vm by viewModel<LoginVM>(){
+
+    }
     override fun initData() {
         binding.vm2 = vm
         binding.vm2!!.loginStatus!!.observeForever {

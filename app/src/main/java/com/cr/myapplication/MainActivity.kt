@@ -11,6 +11,7 @@ import com.cr.myapplication.databinding.ActivityMainBinding
 import com.cr.myapplication.extension.viewModel
 import com.cr.myapplication.route.RoutePath.Companion.loginAC
 import com.cr.myapplication.route.RouteUtil.Companion.activityTo
+import java.time.LocalDateTime
 
 class MainActivity : BaseMVVMActivity<ActivityMainBinding, MainVM>() {
 
@@ -19,7 +20,7 @@ class MainActivity : BaseMVVMActivity<ActivityMainBinding, MainVM>() {
     val vm by viewModel<MainVM>()
     override fun initData() {
         binding.vm = vm
-        vm.keyWord.value = "劳资腰改了"
+        vm.keyWord.value = "劳资腰了"
         vm.keyWord.observeForever {
             ToastUtil.showToast(this, it)
         }
@@ -49,20 +50,11 @@ class MainActivity : BaseMVVMActivity<ActivityMainBinding, MainVM>() {
                     override fun onArrival(postcard: Postcard?) {
                     }
                 })
-//                activityTo(this, loginAC, bundle, 111, object : Callback {
-//                    override fun onActivityResult(
-//                        requestCode: Int,
-//                        resultCode: Int,
-//                        data: Intent?
-//                    ) {
-//
-//                    }
-//
-//                })
-            } else {
 
             }
         }
     }
+
+
 
 }
