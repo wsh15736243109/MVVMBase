@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import io.github.iamyours.router.ARouter
-import io.github.iamyours.router.Callback
-import io.github.iamyours.router.Postcard
+import com.alibaba.android.arouter.facade.Postcard
+import com.alibaba.android.arouter.facade.callback.NavigationCallback
+import com.alibaba.android.arouter.launcher.ARouter
 
 class RouteUtil {
     companion object {
@@ -19,35 +19,68 @@ class RouteUtil {
             ARouter.getInstance().build(path).with(bundle).navigation(context)
         }
 
-        /**
-         *
-         */
+        //        /**
+//         *
+//         */
         fun activityTo(
             context: Activity,
             path: String,
             requestCode: Int,
-            callback: Callback
+            callback: NavigationCallback
         ) {
             ARouter.getInstance().build(path)
                 .navigation(
                     context,
-                    requestCode
-                ) { requestCode, resultCode, data -> callback.onActivityResult(requestCode,resultCode,data) }
+                    requestCode, object : NavigationCallback {
+                        override fun onLost(postcard: Postcard?) {
+
+                        }
+
+                        override fun onFound(postcard: Postcard?) {
+
+                        }
+
+                        override fun onInterrupt(postcard: Postcard?) {
+
+                        }
+
+                        override fun onArrival(postcard: Postcard?) {
+
+                        }
+
+                    }
+                )
         }
 
-        @JvmOverloads
+        //
         fun activityTo(
             context: Activity,
             path: String,
             bundle: Bundle,
             requestCode: Int,
-            callback: Callback
+            callback: NavigationCallback
         ) {
             ARouter.getInstance().build(path).with(bundle)
                 .navigation(
                     context,
-                    requestCode
-                ) { requestCode, resultCode, data -> callback.onActivityResult(requestCode,resultCode,data) }
+                    requestCode, object : NavigationCallback {
+                        override fun onLost(postcard: Postcard?) {
+                            callback.onLost(postcard)
+                        }
+
+                        override fun onFound(postcard: Postcard?) {
+                            callback.onFound(postcard)
+                        }
+
+                        override fun onInterrupt(postcard: Postcard?) {
+                            callback.onInterrupt(postcard)
+                        }
+
+                        override fun onArrival(postcard: Postcard?) {
+                            callback.onArrival(postcard)
+                        }
+                    }
+                )
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.cr.myapplication.application
 
+import com.alibaba.android.arouter.launcher.ARouter
 import com.baseandroidlibrary.application.BaseApplication
 
 class App : BaseApplication() {
@@ -10,6 +11,9 @@ class App : BaseApplication() {
     }
 
     private fun initArouter() {
+        ARouter.openLog()
+        ARouter.openDebug()
+        ARouter.init(this)
     }
 
     override fun initConfigApp() {
@@ -22,5 +26,6 @@ class App : BaseApplication() {
 
     override fun onTerminate() {
         super.onTerminate()
+        ARouter.getInstance().destroy()
     }
 }

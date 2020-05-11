@@ -7,6 +7,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProviders
+import com.alibaba.android.arouter.launcher.ARouter
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
@@ -20,6 +21,7 @@ abstract class BaseMVVMActivity<T : ViewDataBinding, VM : ViewModel> : AppCompat
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, layoutId)
         binding.lifecycleOwner = this
+        ARouter.getInstance().inject(this)
 //        initVM()
         initData()
     }

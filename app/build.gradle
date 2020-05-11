@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'RouterPlugin'
 
 android {
     compileSdkVersion compile_sdk_version
@@ -16,6 +15,12 @@ android {
         versionName version_name
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
 
     buildTypes {
@@ -56,5 +61,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     kapt "com.android.databinding:compiler:$compiler_version"
-    implementation 'io.github.iamyours:router-api:1.0.1'
+//    implementation 'io.github.iamyours:router-api:1.0.1'
+    //arouter路由
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
 }

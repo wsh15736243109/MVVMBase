@@ -1,6 +1,7 @@
 package com.cr.myapplication.activity.newslist
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.cr.myapplication.R
 import com.cr.myapplication.adapter.NewsListAdatper
 import com.cr.myapplication.base.BaseMVVMActivity
@@ -8,7 +9,6 @@ import com.cr.myapplication.databinding.ActivityNewsListBinding
 import com.cr.myapplication.extension.viewModel
 import com.cr.myapplication.route.RoutePath.Companion.newListAC
 import com.cr.myapplication.vo.NewsListItemVO
-import io.github.iamyours.router.annotation.Route
 
 @Route(path = newListAC)
 class NewsListActivity : BaseMVVMActivity<ActivityNewsListBinding, NewsListVM>() {
